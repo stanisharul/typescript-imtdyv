@@ -6,11 +6,16 @@ const appDiv: HTMLElement = document.getElementById("app");
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
 class Typy {
-  language: string;
+  private _language: string;
   audience: string;
+  constructor(language: string) {
+    this._language = language;
+  }
+  get language():string{
+    return this._language
+  }
 }
 
-type: Typy;
-
-this.type.language = "TypeScript";
-console.log(this.type.language)
+let type = new Typy("TypeScript");
+console.log(type);
+console.log(type.language);
